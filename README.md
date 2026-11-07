@@ -6,7 +6,7 @@
 
 Правила оформлення програмного коду на мові JavaScript
 
-Індивідуальна уточнена індивідуальна тема доповіді ПЗ2 українською мовою з кодуванням UTF-8
+Методи рефакторингу коду: Replace Nested Conditional with Guard Clauses, Decompose Conditional, Replace Magic Number with Symbolic Constant
 
 Програмна система роботизованої перевірки складу комплекту перед пакуванням замовлення
 
