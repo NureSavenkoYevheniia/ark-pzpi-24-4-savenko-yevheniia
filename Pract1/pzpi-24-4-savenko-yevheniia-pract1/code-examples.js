@@ -73,13 +73,24 @@ console.log("6. addNumbers(5, 7) =", addNumbers(5, 7));
 
 
 // В.7 МОДУЛЬНЕ ТЕСТУВАННЯ 
+function calculateDiscount(price, rate) {
+    return price - (price * rate);
+}
+
+test('calculateDiscount returns correct value', () => {
+    const price = 100.0;
+    const rate = 0.1;
+    const result = calculateDiscount(price, rate);
+    expect(result).toBe(90.0);
+});
+
 console.log("\n7. Запуск юніт-тесту (TDD):");
 const testPrice = 100.0;
 const testRate = 0.1;
-const result = calculateDiscount(testPrice, testRate);
+const manualResult = calculateDiscount(testPrice, testRate);
 
-if (result === 90.0) {
-  console.log("   ✅ Тест 'calculateDiscount returns correct value' пройдено успішно!");
+if (manualResult === 90.0) {
+    console.log("   ✅ Тест 'calculateDiscount returns correct value' пройдено успішно!");
 } else {
-  console.log("   ❌ Тест не пройдено. Очікувалося 90, отримано:", result);
+    console.log("   ❌ Тест не пройдено. Очікувалося 90, отримано:", manualResult);
 }
