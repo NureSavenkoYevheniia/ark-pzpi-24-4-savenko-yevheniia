@@ -34,13 +34,14 @@ console.log("3. calculateTotal(50, 3) =", calculateTotal(50, 3));
 
 
 // В.4 ОРГАНІЗАЦІЯ ФАЙЛОВОЇ СТРУКТУРИ ТА ІМПОРТИ 
-class OrderManager {
-  constructor() {
-    this.status = "Initialized";
-  }
+import { CONFIG } from './config.js';
+import { UserService } from './services/user.js';
+
+import express from 'express';
+
+export class OrderManager {
+// ...
 }
-const manager = new OrderManager();
-console.log("4. OrderManager статус:", manager.status);
 
 
 // В.5 СИНТАКСИЧНІ ПРАВИЛА ТА ФОРМАТУВАННЯ 
