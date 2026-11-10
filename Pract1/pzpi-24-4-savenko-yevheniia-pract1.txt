@@ -105,16 +105,16 @@
 ДОДАТОК В
 Програмний код
 В.1 ОФОРМЛЕННЯ ФУНКЦІЙ ТА МЕТОДІВ
-GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/code-examples.js#L33-L42
-function calculateDiscount(price, rate) {
-1   if (price < 0 || rate < 0) {
-2   throw new Error("Invalid value");
-3  }
-4  return price * (1.0 - rate);
-5  }
+GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/pzpi-24-4-savenko-yevheniia-pract1/code-examples.js#L4-L9
+1 function calculateDiscount(price, rate) {
+2   if (price < 0 || rate < 0) {
+3   throw new Error("Invalid value");
+4  }
+5  return price * (1.0 - rate);
+6  }
 
 В.2 ПРИКЛАД ПРОГРАМНОГО КОДУ ДО РЕФАКТОРИНҐУ
-GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/code-examples.js#L45-L51
+GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/pzpi-24-4-savenko-yevheniia-pract1/code-examples.js#L14-L19
  1  function f(a,b){
  2  var x=a*b; // multiply
  3  if(x>100){return x-10;}
@@ -122,7 +122,7 @@ GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-
  5  }
 
 В.3 ПРИКЛАД ПРОГРАМНОГО КОДУ ПІСЛЯ РЕФАКТОРИНҐУ
-GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/code-examples.js#L54-L62
+GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/pzpi-24-4-savenko-yevheniia-pract1/code-examples.js#L24-L31
  1  const THRESHOLD = 100;
  2  const DISCOUNT = 10;
  3  
@@ -132,7 +132,7 @@ GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-
  7  }
 
 В.4 ОРГАНІЗАЦІЯ ФАЙЛОВОЇ СТРУКТУРИ ТА ІМПОРТИ
-GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/code-examples.js#L65-L78
+GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/pzpi-24-4-savenko-yevheniia-pract1/code-examples.js#L36-L43
 1  import { CONFIG } from './config.js';
 2  import { UserService } from './services/user.js';
 3
@@ -143,19 +143,19 @@ GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-
 8  }
 
 В.5 СИНТАКСИЧНІ ПРАВИЛА ТА ФОРМАТУВАННЯ
-GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/code-examples.js#L81-L91
-function checkPermission(userRole, isActive) {
-1   if (
-2     userRole === "admin" &&
-3     isActive
-4   ) {
-5     return true;
-6  }
-7     return false;
-8  }
+GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/pzpi-24-4-savenko-yevheniia-pract1/code-examples.js#L47-L56
+1 function checkPermission(userRole, isActive) {
+2   if (
+3     userRole === "admin" &&
+4     isActive
+5   ) {
+6     return true;
+7  }
+8     return false;
+9  }
 
 В.6 ДОКУМЕНТУВАННЯ ТА КОМЕНТАРІ JSDOC
-GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/code-examples.js#L94-L105
+GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/pzpi-24-4-savenko-yevheniia-pract1/code-examples.js#L61-L70
 1  /**
 2  * Додає два цілих числа.
 3  * @param {number} a Перший доданок.
@@ -167,15 +167,14 @@ GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-
 9  }
 
 В.7 МОДУЛЬНЕ ТЕСТУВАННЯ TDD З JEST
-GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/code-examples.js#L108-L122
-test('calculateDiscount returns correct value', () => {
-1  // Arrange
-2  const price = 100.0;
-3  const rate = 0.1;
+GitHub репозиторій: https://github.com/NureSavenkoYevheniia/ark-pzpi-24-4-savenko-yevheniia/blob/main/Pract1/pzpi-24-4-savenko-yevheniia-pract1/code-examples.js#L75-L85
+1 function calculateDiscount(price, rate) {
+2    return price - (price * rate);
+3 }
 4
-5  // Act
-6  const result = calculateDiscount(price, rate);
-7
-8  // Assert
-9  expect(result).toBe(90.0);
+5 test('calculateDiscount returns correct value', () => {
+6    const price = 100.0;
+7    const rate = 0.1;
+8    const result = calculateDiscount(price, rate);
+9    expect(result).toBe(90.0);
 10 });
